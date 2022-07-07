@@ -22,13 +22,14 @@ function chooseNeighbourOf(cell: Cell): Cell | null {
  * Builds a maze using the Binary Tree algorithm.
  * @param grid the initialised raw representation of the maze
  */
-function buildMaze(grid: Grid): void {
+function* buildMaze(grid: Grid): Generator<number[], void, undefined> {
     for (let cell of grid.getNextCell()) {
         if (cell === null) continue; 
         let neighbour: Cell | null = chooseNeighbourOf(cell); 
 
         if (neighbour) {
             cell.linkTo(neighbour);
+            yield [cell.row, cell.column, neighbour.row, neighbour.column]; 
         }
     }
 }
