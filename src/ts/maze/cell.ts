@@ -1,11 +1,10 @@
-import { HashMap } from "../types/types"; 
-
 
 class Cell {
-    protected row: number; 
-    protected column: number;
+    protected row_: number; 
+    protected column_: number;
 
-    protected links: {}; //| HashMap;
+    //protected links: Map<Cell, boolean>; 
+    protected links: {}; 
 
     public top: Cell | null = null;
     public bottom: Cell | null = null;
@@ -17,9 +16,9 @@ class Cell {
      * @param row the row ID of the cell
      * @param column the column ID of the cell
      */
-    public constructor(row: number, column: number) {
-        this.row = row; 
-        this.column = column; 
+    constructor(row: number, column: number) {
+        this.row_ = row; 
+        this.column_ = column; 
     }
 
     /**
@@ -28,7 +27,7 @@ class Cell {
      * @returns The hashcode corresponding to a specific cell. 
      */
     private hashCode(cell: Cell): string {
-        return (cell.row * 1000 + cell.column).toString();
+        return (cell.row_ * 1000 + cell.column_).toString();
     }
 
     /**
@@ -39,6 +38,7 @@ class Cell {
      */
     public linkTo(cell: Cell, bidirect: boolean = true): void {
         this.links[this.hashCode(cell)] = true;
+        //this.links.set(cell, true); 
         if (bidirect) {
             cell.linkTo(this, false);
         }
@@ -46,11 +46,12 @@ class Cell {
 
     /**
      * Check if it is linked to any cell in the maze.
-     * @return 'true' if it is linked to adjacent cells and
+     * @return 'true' if it is linked to adjacent cells and 
      *         'false' if it is not linked to any.
      */
      public hasLinkedCells(): boolean {
         if (Object.keys(this.links).length !== 0) return true;
+        //if (this.links.keys.length !== 0) return true;
         return false;
     }
 
@@ -89,4 +90,14 @@ class Cell {
         return lst;
     }
 
+    public get row() {
+        return this.row_;
+    }
+
+    public get column() {
+        return this.column_; 
+    }
 }
+
+
+export { Cell }; 
