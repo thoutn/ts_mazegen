@@ -74,16 +74,16 @@ class Cell {
      public neighbours(): Cell[] {
         let lst: Cell[] = [];
 
-        if (this.top != null) {
+        if (this.top) {
             lst.push(this.top);
         }
-        if (this.bottom != null) {
+        if (this.bottom) {
             lst.push(this.bottom);
         }
-        if (this.right != null) {
+        if (this.right) {
             lst.push(this.right);
         }
-        if (this.left != null) {
+        if (this.left) {
             lst.push(this.left);
         }
 
