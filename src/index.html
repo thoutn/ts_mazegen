@@ -9,7 +9,28 @@
 </head>
 <body>
     <canvas width="600" height="600"></canvas>
-    <p id="run">Run</p>
+    <div class="buttons">
+        <button class="button" id="run">Run</button>
+        <button class="button" id="pause">Pause</button>
+        <button class="button" id="clear">Clear</button>
+    </div>
+
+    <div class="dropdown">
+        <label>Choose an algorithm:</label>
+
+        <select>
+            <option value="btree">Binary tree</option>
+            <option value="sidewinder">Sidewinder</option>
+            <option value="backtracker">Backtracker</option>
+            <option value="prim">Prim's</option>
+            <option value="kruskal">Kruskal's</option>
+            <option value="eller">Eller's</option>
+            <option value="huntkill">Hunt and kill</option>
+            <option value="aldous">Aldous-Broder</option>
+            <option value="wilson">Wilson</option>
+            <option value="division">Recursive division</option>
+        </select>
+    </div>
 
     <script src="main.js"></script>
 </body>

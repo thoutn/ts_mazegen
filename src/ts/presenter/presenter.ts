@@ -2,10 +2,6 @@ import { Grid } from "../maze/grid";
 import { canvas, ctx } from "../main"; 
 
 
-
-
-
-
 class Presenter {
     static grid: Grid;
     private static dimension: number;

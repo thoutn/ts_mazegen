@@ -1,14 +1,135 @@
+:root {
+    --color-bkg: #ffdab9; 
+    --color-green-hover: #14b121; 
+    --color-green-active: #1a7c0d; 
+    --color-orange-hover: #df9f15; 
+    --color-orange-active: #9c6410; 
+    --color-red-hover: #ec1840; 
+    --color-red-active: #9c1029; 
+    --color-brown: #332b25; 
+    --color-white: white; 
+    --color-black-1: #111;
+    --color-black-2: #222;
+    --color-black-3: #444;
+    --size-btn: 45px;
+    --size-dropdwn: 35px;
+}
+
 body {
-    background: #ffdab9; /*#faba75*/;
+    background: var(--color-black-2);
     text-align: center;
 }
 
-canvas {
-    border: 2px solid 	#332b25;
+#run, canvas {
+    position: relative;
 }
 
+canvas {
+    border: 2px solid var(--color-brown);
+    background-color: var(--color-brown);
+    margin-top: 50px;
+}
+
+.button {
+    margin-top: 16px;
+    width: 130px;
+    height: var(--size-btn);
+    border: 1px solid;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif; 
+    line-height: var(--size-btn);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    display: inline;
+    margin-inline: 20px;
+
+    cursor: pointer; 
+}
+
+.button:hover {
+    transition: 0.3s;
+}
+
+/* RUN button */
 #run { 
-    font-size: 1.5em;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    border-color: var(--color-green-hover);
+    background-color: var(--color-black-2);
+}
+
+#run:hover {
+    background-color:var(--color-green-hover);
+}
+
+#run:active {
+    border-color: var(--color-green-active);
+    background-color: var(--color-green-active);
+}
+
+/* PAUSE button */
+#pause {
+    border-color: var(--color-orange-hover);
+    background-color: var(--color-black-2);
+}
+
+#pause:hover {
+    background-color:var(--color-orange-hover);
+}
+
+#pause:active {
+    border-color: var(--color-orange-active);
+    background-color: var(--color-orange-active);
+}
+
+/* CLEAR button */
+#clear {
+    border-color: var(--color-red-hover);
+    background-color: var(--color-black-2);
+}
+
+#clear:hover {
+    background-color:var(--color-red-hover);
+}
+
+#clear:active {
+    border-color: var(--color-red-active);
+    background-color: var(--color-red-active);
+}
+
+label {
+    font-family: "Poppins", sans-serif; 
+    font-size: 15px;
+    color: var(--color-white);
+}
+
+select {
+    margin-top: 35px;
+
+    appearance: none;
+    border-radius: 5px;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg)
+        no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, var(--color-black-3) 3em, var(--color-black-2) 3em);
+    /* options background */
+    background-color: var(--color-black-3);
+
+    width: 200px;
+    height: var(--size-dropdwn);
+
+    font-size: 13px;
+    padding: 0px 0px 0px 10px; /* top right bottom left */
+    font-family: "Poppins", sans-serif; 
+    line-height: var(--size-dropdwn);
+    letter-spacing: 2px;
+    color: var(--color-white);
+
+    display: inline;
+    margin-inline: 8px;
+
+    cursor: pointer; 
+}
+
+select:focus {
+    outline: none;
 }
