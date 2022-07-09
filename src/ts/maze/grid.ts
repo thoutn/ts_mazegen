@@ -1,4 +1,4 @@
-import { Cell } from "./cell"
+import { Cell } from "./cell.js"
 
 class Grid {
     protected width_: number;
@@ -29,9 +29,9 @@ class Grid {
      */
     protected prepareGrid(): void {
         for (let row_ = 0; row_ < this.height_; row_++) {
-            this.cells.push(new Array(this.width_));
+            this.cells[row_] = new Array(this.width_);
             for (let col_ = 0; col_ < this.width_; col_++) {
-                this.cells[row_].push(new Cell(row_, col_));
+                this.cells[row_][col_] = new Cell(row_, col_);
             }
         }
     }

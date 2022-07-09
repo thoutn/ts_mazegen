@@ -4,7 +4,7 @@ class Cell {
     protected column_: number;
 
     //protected links: Map<Cell, boolean>; 
-    protected links: {}; 
+    protected links: {} = {}; 
 
     public top: Cell | null = null;
     public bottom: Cell | null = null;
