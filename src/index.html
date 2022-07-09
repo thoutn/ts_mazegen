@@ -10,15 +10,15 @@
 <body>
     <canvas width="600" height="600"></canvas>
     <div class="buttons">
-        <button class="button" id="run">Run</button>
-        <button class="button" id="pause">Pause</button>
-        <button class="button" id="clear">Clear</button>
+        <button type="button" class="button" id="run">Run</button>
+        <button type="button" class="button" id="pause">Pause</button>
+        <button type="button" class="button" id="clear">Clear</button>
     </div>
 
     <div class="dropdown">
-        <label>Choose an algorithm:</label>
+        <label for="select">Choose an algorithm:</label>
 
-        <select>
+        <select id="select">
             <option value="btree">Binary tree</option>
             <option value="sidewinder">Sidewinder</option>
             <option value="backtracker">Backtracker</option>

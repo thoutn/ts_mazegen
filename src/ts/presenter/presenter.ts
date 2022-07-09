@@ -2,6 +2,9 @@ import { Grid } from "../maze/grid.js";
 /*import { canvas, ctx } from "../main"; */
 
 
+const COLOUR_WHITE: string = "#e5e5e5";
+
+
 class Presenter {
     static grid: Grid;
     private static dimension: number;
@@ -77,7 +80,7 @@ class Presenter {
 
 
     public static drawCell(x: number, y: number, w: number, h: number, 
-                           colour: string = "white"): void {
+                           colour: string = COLOUR_WHITE): void {
         let x_ = x * this.size; 
         let y_ = y * this.size;
         
@@ -86,7 +89,8 @@ class Presenter {
 
 
     public static drawTwoCells(c1x: number, c1y: number, 
-                               c2x: number, c2y: number, colour: string = "white"): void {
+                               c2x: number, c2y: number, 
+                               colour: string = COLOUR_WHITE): void {
         let x = (c1x <= c2x) ? c1x : c2x;
         let y = (c1y <= c2y) ? c1y : c2y;
         let w = (c1x === c2x) ? this.cellSize : (2 * this.cellSize + this.wallSize); 
