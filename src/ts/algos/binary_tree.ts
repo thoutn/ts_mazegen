@@ -1,5 +1,5 @@
-import { Cell } from "../maze/cell"; 
-import { Grid } from "../maze/grid"; 
+import { Cell } from "../maze/cell.js"; 
+import { Grid } from "../maze/grid.js"; 
 
 
 /**
