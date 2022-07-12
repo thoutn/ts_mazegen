@@ -29,7 +29,7 @@ function* buildMaze(grid: Grid): Generator<number[], void, undefined> {
 
         if (neighbour) {
             cell.linkTo(neighbour);
-            yield [cell.column, cell.row, neighbour.column, neighbour.row]; 
+            yield [cell.column, cell.row, neighbour.column, neighbour.row, 1]; 
         }
     }
 }

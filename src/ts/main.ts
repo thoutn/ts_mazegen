@@ -1,6 +1,7 @@
 import { Grid } from "./maze/grid.js";
-import { Presenter } from "./presenter/presenter.js";
+import { Presenter, COLOUR_WHITE, COLOUR_RED } from "./presenter/presenter.js";
 import { buildMaze as btree } from "./algos/binary_tree.js";
+import { buildMaze as backtracker } from "./algos/recursive_backtracker.js";
 
 
 //let canvas = document.querySelector("canvas") as HTMLCanvasElement;
@@ -25,9 +26,44 @@ function animate(): void {
     if (isAnimRunning) {
         let array = builder.next().value;
         if (array instanceof Object) { 
-            let [a, b, c, d] = [...array]; 
+            let [a, b, c, d, e] = [...array]; 
+            let colour: string;
 
-            Presenter.drawTwoCells(a, b, c, d);
+            switch (selectedAlgo) {
+                case "btree": 
+                    if (e === 1) colour = COLOUR_WHITE;
+                    else colour = "white";
+                    Presenter.drawTwoCells(a, b, c, d, colour);
+                    break;
+                case "sidewinder":
+
+                    break;
+                case "backtracker":
+                    if (e === 1) Presenter.drawCell(a, b, c, d, COLOUR_WHITE);
+                    else Presenter.drawTwoCells(a, b, c, d, COLOUR_RED); 
+                    break;
+                case "prim":
+                    
+                    break;
+                case "kruskal":
+                    
+                    break;
+                case "eller":
+                    
+                    break;
+                case "huntkill":
+                    
+                    break;
+                case "aldous":
+                    
+                    break;
+                case "wilson":
+                    
+                    break;
+                case "division":
+                    
+                    break;
+            }
 
             setTimeout(animate, 100);
         }
@@ -66,8 +102,7 @@ function switchAlgo(): void {
             alertNotImplemented()
             break;
         case "backtracker":
-            //builder = backtracker(grid);
-            alertNotImplemented()
+            builder = backtracker(grid);
             break;
         case "prim":
             //builder = prim(grid);
@@ -118,6 +153,7 @@ function resetAnim(event?: Event): void {
 
 
 // Delete after algorithms implemented
+// -----------------------------------
 function alertNotImplemented(): void {
     alert("Not implemented"); 
     selectElem.selectedIndex = 0; 
